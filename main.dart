@@ -57,12 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: MyDrawer(),
       //appBar: MyAppBar(),
       appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          title: Text(
-            'SPRYTE',
-          ),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        title: Text(
+          'SPRYTE',
         ),
+      ),
       body: Center(
         child: Container(
           padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
@@ -76,14 +76,41 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 20.0),
+                padding: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
                 child: ListTile(
                   trailing: Icon(Icons.search),
                   title: TextField(),
                 ),
               ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: FlatButton(
+                  padding: EdgeInsets.only(right: 30.0),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ListDisplay()));
+
+
+                    // *** REROUTE THIS BUTTON TO TECH STACK PAGE ***
+
+
+
+
+                  },
+                  child: Text(
+                    'or specify your tech stack',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontSize: 12.0,
+                      color: Colors.indigo,
+                    ),
+                  ),
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(60.0, 25.0, 60.0, 45.0),
+                padding: EdgeInsets.fromLTRB(60.0, 25.0, 60.0, 45.0),
                 child: RaisedButton(
                   color: Colors.black,
                   shape: RoundedRectangleBorder(
@@ -91,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SecondPage()),
+                      MaterialPageRoute(builder: (context) => ListDisplay()),
                     );
                   },
                   child: ListTile(
